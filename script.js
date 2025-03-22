@@ -77,7 +77,8 @@ keys.addEventListener('click', e => {
     delete calculator.dataset.firstValue;
     delete calculator.dataset.operator;
     delete calculator.dataset.previousKeyType;
-  }
+  } 
+  
 
 });
 
