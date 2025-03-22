@@ -4,19 +4,6 @@
 // # START EDITING YOUR JAVASCRIPT HERE
 // Corto Beck
 
-const calculator = document.querySelector('.calculator')
-const keys = calculator.querySelector('.calculator__keys')
-
-keys.addEventListener('click', e => {
-    if (e.target.matches('button'))
-        {
-
-        }
-    })
-
-const key = e.target
-const action = key.dataset.action
-
-if (!action) {
-    console.log('number key!')
-}
+const calculator = document.querySelector('.calculator');
+const display = calculator.querySelector('.calculator__display');
+const keys = calculator.querySelector('.calculator__keys');
