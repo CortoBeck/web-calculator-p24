@@ -49,5 +49,35 @@ keys.addEventListener('click', e => {
     calculator.dataset.previousKeyType = 'decimal';
   }
 
+  
+  if (
+    action === 'add' ||
+    action === 'subtract' ||
+    action === 'multiply' ||
+    action === 'divide'
+  ) {
+    calculator.dataset.firstValue = displayedNum;
+    calculator.dataset.operator = action;
+    calculator.dataset.previousKeyType = 'operator';
+  }
+
+  if (action === 'calculate') {
+    const firstValue = calculator.dataset.firstValue;
+    const operator = calculator.dataset.operator;
+    const secondValue = displayedNum;
+
+    if (firstValue && operator) {
+      display.textContent = calculate(firstValue, operator, secondValue);
+    }
+    calculator.dataset.previousKeyType = 'calculate';
+  }
+
+  if (action === 'clear') {
+    display.textContent = '0';
+    delete calculator.dataset.firstValue;
+    delete calculator.dataset.operator;
+    delete calculator.dataset.previousKeyType;
+  }
+
 });
 
